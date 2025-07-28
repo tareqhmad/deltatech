@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delta Tech - Solutions IT pour PME</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ asset('image/delta_logo.png') }}" type="image/x-icon">
     <style>
         * {
             margin: 0;
@@ -678,13 +679,6 @@
                 header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
             }
         });
-
-        // Form submission
-        // document.querySelector('.contact-form').addEventListener('submit', function(e) {
-        //     e.preventDefault();
-        //     // Here you would typically send the form data to your Laravel backend
-        //     alert('Merci pour votre message ! Nous vous répondrons dans les plus brefs délais.');
-        // });
     </script>
 </body>
 

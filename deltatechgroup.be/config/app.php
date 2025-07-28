@@ -99,6 +99,8 @@ return [
 
     'key' => env('APP_KEY'),
 
+    'available_locales' => ['fr', 'nl', 'en'],
+
     'previous_keys' => [
         ...array_filter(
             explode(',', env('APP_PREVIOUS_KEYS', ''))
