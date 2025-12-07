@@ -361,12 +361,97 @@
             transform: translateY(-2px);
         }
 
-        /* Footer */
+        /* Footer Styles - AJOUTÉS */
         footer {
-            background: #333;
-            color: white;
+            background: #f8f9fa;
+            padding: 60px 0 30px;
+            color: #333;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #667eea;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .footer-section p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #666;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .footer-section ul li a:hover {
+            color: #667eea;
+            transform: translateX(5px);
+        }
+
+        .footer-section .contact-info p {
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        footer>.container>p {
             text-align: center;
-            padding: 2rem 0;
+            padding-top: 30px;
+            border-top: 1px solid #e9ecef;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Delta Express Link Styles */
+        .delta-express-link {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white !important;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-left: 10px;
+        }
+
+        .delta-express-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(245, 87, 108, 0.3);
+            color: white !important;
+        }
+
+        .delta-express-link i {
+            margin-right: 5px;
         }
 
         /* Animations */
@@ -415,6 +500,17 @@
 
             .section-title {
                 font-size: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .delta-express-link {
+                margin-left: 0;
+                margin-top: 10px;
+                display: inline-block;
             }
         }
 
@@ -476,6 +572,11 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#apropos">À propos</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li>
+                    <a href="{{ route('blog.index') }}" class="delta-express-link" target="_blank">
+                        <i class="fas fa-truck"></i> Delta Express
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -490,7 +591,13 @@
             <div class="hero-content">
                 <h1>Delta Tech</h1>
                 <p>Solutions IT innovantes pour les PME</p>
-                <a href="#contact" class="cta-button">Contactez-nous</a>
+                <div class="hero-buttons">
+                    <a href="#contact" class="cta-button">Contactez-nous</a>
+                    <a href="{{ route('blog.index') }}" class="cta-button" target="_blank"
+                        style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border-color: rgba(245, 87, 108, 0.3); margin-left: 15px;">
+                        <i class="fas fa-truck mr-2"></i> Delta Express
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -569,6 +676,18 @@
                         <li>Technologies de pointe</li>
                         <li>Rapport qualité-prix optimal</li>
                     </ul>
+                    <div class="delta-express-promo"
+                        style="margin-top: 30px; padding: 20px; background: linear-gradient(135deg, rgba(240, 147, 251, 0.1) 0%, rgba(245, 87, 108, 0.1) 100%); border-left: 4px solid #f5576c; border-radius: 8px;">
+                        <h3 style="color: #f5576c; margin-bottom: 10px;"><i class="fas fa-truck mr-2"></i> Découvrez
+                            Delta Express</h3>
+                        <p style="color: #666; margin-bottom: 15px;">Notre service de livraison express pour
+                            particuliers et entreprises. Calcul de prix transparent, suivi en temps réel et service
+                            client dédié.</p>
+                        <a href="{{ route('blog.index') }}" class="cta-button" target="_blank"
+                            style="padding: 10px 20px; font-size: 14px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border-color: rgba(245, 87, 108, 0.3);">
+                            <i class="fas fa-external-link-alt mr-1"></i> Visiter Delta Express
+                        </a>
+                    </div>
                 </div>
                 <div class="about-visual fade-in">
                     <div style="text-align: center; font-size: 8rem; color: #667eea; opacity: 0.3;">
@@ -599,6 +718,15 @@
                         <span>Avenue de la liberté 175 &nbsp </span>
                         <span>1080 Molenbeek-Saint-Jean &nbsp </span>
                         <span> Belgique</span>
+                    </div>
+                    <div class="contact-item" style="margin-top: 20px;">
+                        <i class="fas fa-truck" style="color: #f5576c;"></i>
+                        <span>
+                            <a href="{{ route('blog.index') }}"
+                                style="color: #f5576c; font-weight: 600; text-decoration: underline;" target="_blank">
+                                Visitez Delta Express (Service de livraison)
+                            </a>
+                        </span>
                     </div>
                 </div>
                 <form class="contact-form fade-in" action="{{ route('contact.send') }}" method="POST">
@@ -631,6 +759,39 @@
 
     <footer>
         <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Delta Tech</h3>
+                    <p>Solutions IT innovantes pour les PME. Nous accompagnons votre transformation digitale avec
+                        expertise et innovation.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Nos Services</h3>
+                    <ul>
+                        <li><a href="#services">Développement Web</a></li>
+                        <li><a href="#services">Infrastructure IT</a></li>
+                        <li><a href="#services">Solutions Cloud</a></li>
+                        <li><a href="#services">Cybersécurité</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Liens Rapides</h3>
+                    <ul>
+                        <li><a href="{{ route('blog.index') }}" target="_blank">Delta Express</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#apropos">À propos</a></li>
+                        <li><a href="#services">Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone mr-2"></i> +32 (0)497 22 70 33</p>
+                        <p><i class="fas fa-envelope mr-2"></i> info@deltatechgroup.be</p>
+                        <p><i class="fas fa-map-marker-alt mr-2"></i> Avenue de la liberté 175, 1080 Bruxelles</p>
+                    </div>
+                </div>
+            </div>
             <p>&copy; 2025 Delta Tech. Tous droits réservés.</p>
         </div>
     </footer>
@@ -679,6 +840,33 @@
                 header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
             }
         });
+
+        // Style pour les boutons dans hero
+        const style = document.createElement('style');
+        style.textContent = `
+            .hero-buttons {
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+                margin-top: 30px;
+                flex-wrap: wrap;
+            }
+            
+            @media (max-width: 768px) {
+                .hero-buttons {
+                    flex-direction: column;
+                    align-items: center;
+                }
+                
+                .hero-buttons .cta-button {
+                    margin: 5px 0;
+                    width: 100%;
+                    max-width: 300px;
+                    text-align: center;
+                }
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 
 </body>
