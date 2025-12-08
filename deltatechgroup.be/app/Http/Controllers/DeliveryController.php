@@ -201,7 +201,7 @@ class DeliveryController extends Controller
 
         // Réduction pour les longs trajets
         if ($distanceKm > 30) {
-            $reduction = min(15, $price * 0.15); // 15% max, max 15€
+            $reduction = min(7, $price * 0.10); // 15% max, max 15€
             $price -= $reduction;
         }
 
