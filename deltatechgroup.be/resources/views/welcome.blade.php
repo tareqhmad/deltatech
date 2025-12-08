@@ -4,9 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delta Tech - Solutions IT pour PME</title>
+    <meta name="description"
+        content="Delta Tech - Solutions IT innovantes pour PME. Développement web, infrastructure IT, cloud, cybersécurité et support technique 24/7 en Belgique.">
+    <meta name="keywords"
+        content="solutions IT, développement web, infrastructure IT, cloud, cybersécurité, PME, Bruxelles, Belgique, Delta Tech">
+    <meta name="author" content="Delta Tech">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Delta Tech - Solutions IT pour PME">
+    <meta property="og:description"
+        content="Transformation digitale et solutions informatiques innovantes pour votre entreprise">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.deltatechgroup.be">
+    <link rel="canonical" href="https://www.deltatechgroup.be">
+    <title>Delta Tech - Solutions IT Innovantes pour PME | Bruxelles, Belgique</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link rel="shortcut icon" href="{{ asset('image/delta_logo.png') }}" type="image/x-icon">
     <style>
         * {
             margin: 0;
@@ -14,15 +25,27 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --metal-silver: #C0C0C0;
+            --metal-platinum: #E5E4E2;
+            --metal-titanium: #878681;
+            --metal-chrome: #ABB2B9;
+            --metal-steel: #5D6D7E;
+            --metal-dark: #2C3E50;
+            --accent-cyan: #00D9FF;
+            --accent-electric: #00FFF0;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: #2C3E50;
             overflow-x: hidden;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 20px;
         }
@@ -32,60 +55,88 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background: linear-gradient(135deg, rgba(192, 192, 192, 0.1) 0%, rgba(43, 62, 80, 0.15) 100%);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
             z-index: 1000;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-bottom: 1px solid rgba(0, 217, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 217, 255, 0.1);
+        }
+
+        header.scrolled {
+            background: linear-gradient(135deg, rgba(192, 192, 192, 0.15) 0%, rgba(43, 62, 80, 0.2) 100%);
+            box-shadow: 0 8px 32px rgba(0, 217, 255, 0.2);
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 0;
+            padding: 1.2rem 0;
         }
 
         .logo {
             font-size: 2rem;
-            font-weight: bold;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--metal-platinum) 0%, var(--accent-cyan) 50%, var(--accent-electric) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             text-decoration: none;
+            text-shadow: 0 0 30px rgba(0, 217, 255, 0.5);
+            letter-spacing: 2px;
+            position: relative;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+            animation: glow 2s ease-in-out infinite;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 3rem;
+            align-items: center;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: #333;
-            font-weight: 500;
+            color: var(--metal-platinum);
+            font-weight: 600;
             transition: all 0.3s ease;
             position: relative;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
         }
 
         .nav-links a:hover {
-            color: #667eea;
+            color: var(--accent-cyan);
+            text-shadow: 0 0 20px rgba(0, 217, 255, 0.8);
         }
 
-        .nav-links a::after {
+        .nav-links a::before {
             content: '';
             position: absolute;
             width: 0;
             height: 2px;
-            bottom: -5px;
-            left: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-electric));
             transition: width 0.3s ease;
+            box-shadow: 0 0 10px var(--accent-cyan);
         }
 
-        .nav-links a:hover::after {
+        .nav-links a:hover::before {
             width: 100%;
         }
 
@@ -94,7 +145,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
             position: relative;
             overflow: hidden;
         }
@@ -106,8 +157,35 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff08" points="0,1000 1000,800 1000,1000"/></svg>');
-            background-size: cover;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(0, 217, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 255, 240, 0.15) 0%, transparent 50%),
+                linear-gradient(135deg, transparent 0%, rgba(192, 192, 192, 0.05) 100%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                linear-gradient(rgba(0, 217, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 217, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: grid-move 20s linear infinite;
+        }
+
+        @keyframes grid-move {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(50px);
+            }
         }
 
         .hero-content {
@@ -115,69 +193,124 @@
             text-align: center;
             z-index: 2;
             position: relative;
-            animation: fadeInUp 1s ease;
+            animation: fadeInUp 1.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .hero h1 {
-            font-size: 4rem;
+            font-size: 5.5rem;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, var(--metal-platinum) 0%, var(--accent-cyan) 50%, var(--accent-electric) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            filter: drop-shadow(0 0 40px rgba(0, 217, 255, 0.5));
         }
 
         .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
+            font-size: 1.8rem;
+            margin-bottom: 3rem;
+            color: var(--metal-chrome);
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
         .cta-button {
             display: inline-block;
-            padding: 15px 40px;
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
+            padding: 18px 45px;
+            background: linear-gradient(135deg, rgba(192, 192, 192, 0.1) 0%, rgba(0, 217, 255, 0.2) 100%);
+            color: var(--accent-cyan);
             text-decoration: none;
             border-radius: 50px;
-            font-weight: bold;
+            font-weight: 700;
             font-size: 1.1rem;
-            transition: all 0.3s ease;
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid rgba(0, 217, 255, 0.5);
             backdrop-filter: blur(10px);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(0, 217, 255, 0.3) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+            border-radius: 50%;
+        }
+
+        .cta-button:hover::before {
+            width: 300px;
+            height: 300px;
         }
 
         .cta-button:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(0, 217, 255, 0.4);
+            border-color: var(--accent-cyan);
+            color: white;
+        }
+
+        .cta-button.express {
+            background: linear-gradient(135deg, rgba(240, 147, 251, 0.15) 0%, rgba(245, 87, 108, 0.2) 100%);
+            border-color: rgba(245, 87, 108, 0.5);
+            color: #f5576c;
+        }
+
+        .cta-button.express:hover {
+            box-shadow: 0 10px 40px rgba(245, 87, 108, 0.4);
+            border-color: #f5576c;
         }
 
         /* Services Section */
         .services {
-            padding: 100px 0;
-            background: #f8f9fa;
+            padding: 120px 0;
+            background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 100%);
+            position: relative;
         }
 
         .section-title {
             text-align: center;
-            font-size: 3rem;
-            margin-bottom: 3rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-size: 3.5rem;
+            margin-bottom: 4rem;
+            background: linear-gradient(135deg, var(--metal-platinum) 0%, var(--accent-cyan) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
         }
 
         .service-card {
-            background: white;
-            padding: 2rem;
+            background: linear-gradient(135deg, rgba(192, 192, 192, 0.05) 0%, rgba(43, 62, 80, 0.1) 100%);
+            padding: 3rem;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
         }
@@ -188,125 +321,187 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 4px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-electric));
+            box-shadow: 0 0 20px var(--accent-cyan);
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 217, 255, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .service-card:hover::after {
+            opacity: 1;
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(0, 217, 255, 0.3);
+            border-color: var(--accent-cyan);
         }
 
         .service-icon {
-            font-size: 3rem;
-            color: #667eea;
-            margin-bottom: 1rem;
+            font-size: 4rem;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-electric));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 0 20px rgba(0, 217, 255, 0.5));
         }
 
         .service-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             margin-bottom: 1rem;
-            color: #333;
+            color: var(--metal-platinum);
+            font-weight: 700;
+            letter-spacing: 1px;
         }
 
         .service-card p {
-            color: #666;
+            color: var(--metal-chrome);
             line-height: 1.8;
+            font-size: 1.05rem;
         }
 
         /* About Section */
         .about {
-            padding: 100px 0;
-            background: white;
+            padding: 120px 0;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            position: relative;
         }
 
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 5rem;
             align-items: center;
         }
 
         .about-text h2 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-bottom: 2rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--metal-platinum) 0%, var(--accent-cyan) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            font-weight: 900;
+            letter-spacing: 1px;
         }
 
         .about-text p {
-            font-size: 1.1rem;
-            color: #666;
+            font-size: 1.15rem;
+            color: var(--metal-chrome);
             margin-bottom: 1.5rem;
-            line-height: 1.8;
+            line-height: 1.9;
         }
 
         .about-features {
             list-style: none;
+            margin-top: 2rem;
         }
 
         .about-features li {
-            padding: 0.5rem 0;
+            padding: 1rem 0;
             position: relative;
-            padding-left: 2rem;
-            color: #333;
+            padding-left: 3rem;
+            color: var(--metal-platinum);
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
         }
 
         .about-features li::before {
             content: '✓';
             position: absolute;
             left: 0;
-            color: #667eea;
+            color: var(--accent-cyan);
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
+            text-shadow: 0 0 10px var(--accent-cyan);
+        }
+
+        .about-features li:hover {
+            transform: translateX(10px);
+            color: var(--accent-cyan);
+        }
+
+        .about-visual {
+            text-align: center;
+            font-size: 12rem;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-electric));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 0 40px rgba(0, 217, 255, 0.5));
+            animation: float 6s ease-in-out infinite;
         }
 
         /* Contact Section */
         .contact {
-            padding: 100px 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            padding: 120px 0;
+            background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 100%);
+            position: relative;
         }
 
         .contact-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 5rem;
             align-items: start;
         }
 
         .contact-info h2 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-bottom: 2rem;
+            background: linear-gradient(135deg, var(--metal-platinum) 0%, var(--accent-cyan) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
         }
 
         .contact-info p {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             margin-bottom: 2rem;
-            opacity: 0.9;
-            line-height: 1.8;
+            color: var(--metal-chrome);
+            line-height: 1.9;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            color: var(--metal-platinum);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateX(10px);
+            color: var(--accent-cyan);
         }
 
         .contact-item i {
             font-size: 1.5rem;
             margin-right: 1rem;
             width: 30px;
+            color: var(--accent-cyan);
+            text-shadow: 0 0 10px var(--accent-cyan);
         }
 
         .contact-form {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
+            background: linear-gradient(135deg, rgba(192, 192, 192, 0.05) 0%, rgba(43, 62, 80, 0.1) 100%);
+            padding: 3rem;
             border-radius: 20px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 217, 255, 0.2);
         }
 
         .form-group {
@@ -315,73 +510,85 @@
 
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
+            margin-bottom: 0.7rem;
+            font-weight: 600;
+            color: var(--metal-platinum);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 12px 15px;
-            border: none;
+            padding: 15px 20px;
+            border: 1px solid rgba(0, 217, 255, 0.3);
             border-radius: 10px;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(0, 0, 0, 0.3);
             font-size: 1rem;
             transition: all 0.3s ease;
+            color: var(--metal-platinum);
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            background: white;
-            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
+            background: rgba(0, 0, 0, 0.4);
         }
 
         .form-group textarea {
             resize: vertical;
-            min-height: 120px;
+            min-height: 150px;
         }
 
         .submit-btn {
             width: 100%;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 18px;
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.2) 0%, rgba(0, 255, 240, 0.2) 100%);
+            color: var(--accent-cyan);
+            border: 2px solid rgba(0, 217, 255, 0.5);
             border-radius: 10px;
             font-size: 1.1rem;
-            font-weight: bold;
+            font-weight: 700;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             backdrop-filter: blur(10px);
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         .submit-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.3) 0%, rgba(0, 255, 240, 0.3) 100%);
             transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(0, 217, 255, 0.4);
+            color: white;
         }
 
-        /* Footer Styles - AJOUTÉS */
+        /* Footer */
         footer {
-            background: #f8f9fa;
-            padding: 60px 0 30px;
-            color: #333;
-            border-top: 1px solid #e9ecef;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            padding: 80px 0 30px;
+            color: var(--metal-chrome);
+            border-top: 1px solid rgba(0, 217, 255, 0.2);
         }
 
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            gap: 50px;
+            margin-bottom: 50px;
         }
 
         .footer-section h3 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            color: #667eea;
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: var(--accent-cyan);
             position: relative;
-            padding-bottom: 10px;
+            padding-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
 
         .footer-section h3::after {
@@ -389,76 +596,35 @@
             position: absolute;
             left: 0;
             bottom: 0;
-            width: 40px;
+            width: 50px;
             height: 3px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-
-        .footer-section p {
-            color: #666;
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
-            margin-bottom: 10px;
+            background: linear-gradient(90deg, var(--accent-cyan), transparent);
+            box-shadow: 0 0 10px var(--accent-cyan);
         }
 
         .footer-section ul li a {
-            color: #666;
-            text-decoration: none;
+            color: var(--metal-chrome);
             transition: all 0.3s ease;
-            display: inline-block;
         }
 
         .footer-section ul li a:hover {
-            color: #667eea;
+            color: var(--accent-cyan);
             transform: translateX(5px);
-        }
-
-        .footer-section .contact-info p {
-            margin-bottom: 10px;
-            color: #666;
+            text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
         }
 
         footer>.container>p {
             text-align: center;
             padding-top: 30px;
-            border-top: 1px solid #e9ecef;
-            color: #888;
-            font-size: 0.9rem;
-        }
-
-        /* Delta Express Link Styles */
-        .delta-express-link {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white !important;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            margin-left: 10px;
-        }
-
-        .delta-express-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(245, 87, 108, 0.3);
-            color: white !important;
-        }
-
-        .delta-express-link i {
-            margin-right: 5px;
+            border-top: 1px solid rgba(0, 217, 255, 0.2);
+            color: var(--metal-chrome);
         }
 
         /* Animations */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(50px);
+                transform: translateY(60px);
             }
 
             to {
@@ -467,10 +633,46 @@
             }
         }
 
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes glow {
+
+            0%,
+            100% {
+                opacity: 0.5;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.7;
+            }
+        }
+
         .fade-in {
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .fade-in.visible {
@@ -485,7 +687,7 @@
             }
 
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 3rem;
             }
 
             .hero p {
@@ -495,108 +697,86 @@
             .about-content,
             .contact-content {
                 grid-template-columns: 1fr;
-                gap: 2rem;
+                gap: 3rem;
             }
 
             .section-title {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
 
-            .footer-content {
+            .services-grid {
                 grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .delta-express-link {
-                margin-left: 0;
-                margin-top: 10px;
-                display: inline-block;
             }
         }
 
-        /* Floating elements */
-        .floating-elements {
+        /* Floating particles */
+        .particles {
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            pointer-events: none;
+            width: 100%;
+            height: 100%;
             overflow: hidden;
+            pointer-events: none;
         }
 
-        .floating-element {
+        .particle {
             position: absolute;
-            opacity: 0.1;
-            animation: float 6s ease-in-out infinite;
+            width: 2px;
+            height: 2px;
+            background: var(--accent-cyan);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent-cyan);
+            animation: particle-float 15s linear infinite;
         }
 
-        .floating-element:nth-child(1) {
-            top: 20%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .floating-element:nth-child(2) {
-            top: 60%;
-            right: 10%;
-            animation-delay: 2s;
-        }
-
-        .floating-element:nth-child(3) {
-            bottom: 20%;
-            left: 20%;
-            animation-delay: 4s;
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0px);
+        @keyframes particle-float {
+            0% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
             }
 
-            50% {
-                transform: translateY(-20px);
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100vh) translateX(100px);
+                opacity: 0;
             }
         }
     </style>
 </head>
 
 <body>
-    <header>
+    <header id="header">
         <nav class="container">
-            <a href="#" class="logo">Delta Tech</a>
+            <a href="#" class="logo">DELTA TECH</a>
             <ul class="nav-links">
                 <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#apropos">À propos</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li>
-                    <a href="{{ route('blog.index') }}" class="delta-express-link" target="_blank">
-                        <i class="fas fa-truck"></i> Delta Express
-                    </a>
-                </li>
+                <li><a href="{{ route('blog.index') }}" class="cta-button express"
+                        style="padding: 10px 25px; font-size: 0.9rem;"><i class="fas fa-truck"></i> Express</a></li>
             </ul>
         </nav>
     </header>
 
     <section id="accueil" class="hero">
-        <div class="floating-elements">
-            <i class="floating-element fas fa-laptop-code fa-3x"></i>
-            <i class="floating-element fas fa-server fa-2x"></i>
-            <i class="floating-element fas fa-cloud fa-3x"></i>
-        </div>
+        <div class="particles" id="particles"></div>
         <div class="container">
             <div class="hero-content">
-                <h1>Delta Tech</h1>
+                <h1>DELTA TECH</h1>
                 <p>Solutions IT innovantes pour les PME</p>
                 <div class="hero-buttons">
                     <a href="#contact" class="cta-button">Contactez-nous</a>
-                    <a href="{{ route('blog.index') }}" class="cta-button" target="_blank"
-                        style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border-color: rgba(245, 87, 108, 0.3); margin-left: 15px;">
-                        <i class="fas fa-truck mr-2"></i> Delta Express
-                    </a>
+                    <a href="{{ route('blog.index') }}" class="cta-button express"><i class="fas fa-truck"></i> Delta
+                        Express</a>
                 </div>
             </div>
         </div>
@@ -606,54 +786,54 @@
         <div class="container">
             <h2 class="section-title fade-in">Nos Services</h2>
             <div class="services-grid">
-                <div class="service-card fade-in">
+                <article class="service-card fade-in">
                     <div class="service-icon">
                         <i class="fas fa-laptop-code"></i>
                     </div>
                     <h3>Développement Web</h3>
                     <p>Création de sites web modernes et d'applications sur mesure pour votre entreprise. Solutions
                         responsive et optimisées pour tous les appareils.</p>
-                </div>
-                <div class="service-card fade-in">
+                </article>
+                <article class="service-card fade-in">
                     <div class="service-icon">
                         <i class="fas fa-server"></i>
                     </div>
                     <h3>Infrastructure IT</h3>
                     <p>Mise en place et maintenance de votre infrastructure informatique. Serveurs, réseaux, sécurité et
                         sauvegarde de données.</p>
-                </div>
-                <div class="service-card fade-in">
+                </article>
+                <article class="service-card fade-in">
                     <div class="service-icon">
                         <i class="fas fa-cloud"></i>
                     </div>
                     <h3>Solutions Cloud</h3>
                     <p>Migration vers le cloud, hébergement sécurisé et solutions de stockage pour optimiser votre
                         productivité et réduire vos coûts.</p>
-                </div>
-                <div class="service-card fade-in">
+                </article>
+                <article class="service-card fade-in">
                     <div class="service-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <h3>Cybersécurité</h3>
                     <p>Protection de vos données et systèmes contre les cybermenaces. Audit de sécurité, formation et
                         mise en place de solutions de protection.</p>
-                </div>
-                <div class="service-card fade-in">
+                </article>
+                <article class="service-card fade-in">
                     <div class="service-icon">
                         <i class="fas fa-headset"></i>
                     </div>
                     <h3>Support Technique</h3>
                     <p>Assistance technique 24/7, maintenance préventive et support utilisateur pour assurer la
                         continuité de votre activité.</p>
-                </div>
-                <div class="service-card fade-in">
+                </article>
+                <article class="service-card fade-in">
                     <div class="service-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3>Consulting IT</h3>
                     <p>Conseil en stratégie informatique, audit de vos systèmes existants et recommandations pour
                         optimiser votre infrastructure.</p>
-                </div>
+                </article>
             </div>
         </div>
     </section>
@@ -676,23 +856,9 @@
                         <li>Technologies de pointe</li>
                         <li>Rapport qualité-prix optimal</li>
                     </ul>
-                    <div class="delta-express-promo"
-                        style="margin-top: 30px; padding: 20px; background: linear-gradient(135deg, rgba(240, 147, 251, 0.1) 0%, rgba(245, 87, 108, 0.1) 100%); border-left: 4px solid #f5576c; border-radius: 8px;">
-                        <h3 style="color: #f5576c; margin-bottom: 10px;"><i class="fas fa-truck mr-2"></i> Découvrez
-                            Delta Express</h3>
-                        <p style="color: #666; margin-bottom: 15px;">Notre service de livraison express pour
-                            particuliers et entreprises. Calcul de prix transparent, suivi en temps réel et service
-                            client dédié.</p>
-                        <a href="{{ route('blog.index') }}" class="cta-button" target="_blank"
-                            style="padding: 10px 20px; font-size: 14px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border-color: rgba(245, 87, 108, 0.3);">
-                            <i class="fas fa-external-link-alt mr-1"></i> Visiter Delta Express
-                        </a>
-                    </div>
                 </div>
                 <div class="about-visual fade-in">
-                    <div style="text-align: center; font-size: 8rem; color: #667eea; opacity: 0.3;">
-                        <i class="fas fa-users-cog"></i>
-                    </div>
+                    <i class="fas fa-users-cog"></i>
                 </div>
             </div>
         </div>
@@ -715,18 +881,7 @@
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Avenue de la liberté 175 &nbsp </span>
-                        <span>1080 Molenbeek-Saint-Jean &nbsp </span>
-                        <span> Belgique</span>
-                    </div>
-                    <div class="contact-item" style="margin-top: 20px;">
-                        <i class="fas fa-truck" style="color: #f5576c;"></i>
-                        <span>
-                            <a href="{{ route('blog.index') }}"
-                                style="color: #f5576c; font-weight: 600; text-decoration: underline;" target="_blank">
-                                Visitez Delta Express (Service de livraison)
-                            </a>
-                        </span>
+                        <span>Avenue de la liberté 175, 1080 Molenbeek-Saint-Jean, Belgique</span>
                     </div>
                 </div>
                 <form class="contact-form fade-in" action="{{ route('contact.send') }}" method="POST">
@@ -777,7 +932,7 @@
                 <div class="footer-section">
                     <h3>Liens Rapides</h3>
                     <ul>
-                        <li><a href="{{ route('blog.index') }}" target="_blank">Delta Express</a></li>
+                        <li><a href="{{ route('blog.index') }}">Delta Express</a></li>
                         <li><a href="#contact">Contact</a></li>
                         <li><a href="#apropos">À propos</a></li>
                         <li><a href="#services">Services</a></li>
@@ -785,11 +940,9 @@
                 </div>
                 <div class="footer-section">
                     <h3>Contact</h3>
-                    <div class="contact-info">
-                        <p><i class="fas fa-phone mr-2"></i> +32 (0)497 22 70 33</p>
-                        <p><i class="fas fa-envelope mr-2"></i> info@deltatechgroup.be</p>
-                        <p><i class="fas fa-map-marker-alt mr-2"></i> Avenue de la liberté 175, 1080 Bruxelles</p>
-                    </div>
+                    <p><i class="fas fa-phone"></i> +32 (0)497 22 70 33</p>
+                    <p><i class="fas fa-envelope"></i> info@deltatechgroup.be</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Avenue de la liberté 175, 1080 Bruxelles</p>
                 </div>
             </div>
             <p>&copy; 2025 Delta Tech. Tous droits réservés.</p>
@@ -797,7 +950,7 @@
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -814,7 +967,7 @@
         // Fade in animation on scroll
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            rootMargin: '0px 0px -100px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -829,46 +982,27 @@
             observer.observe(el);
         });
 
-        // Header background on scroll
+        // Header scroll effect
         window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
+            const header = document.getElementById('header');
             if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-                header.style.boxShadow = '0 2px 30px rgba(0, 0, 0, 0.15)';
+                header.classList.add('scrolled');
             } else {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+                header.classList.remove('scrolled');
             }
         });
 
-        // Style pour les boutons dans hero
-        const style = document.createElement('style');
-        style.textContent = `
-            .hero-buttons {
-                display: flex;
-                justify-content: center;
-                gap: 15px;
-                margin-top: 30px;
-                flex-wrap: wrap;
-            }
-            
-            @media (max-width: 768px) {
-                .hero-buttons {
-                    flex-direction: column;
-                    align-items: center;
-                }
-                
-                .hero-buttons .cta-button {
-                    margin: 5px 0;
-                    width: 100%;
-                    max-width: 300px;
-                    text-align: center;
-                }
-            }
-        `;
-        document.head.appendChild(style);
+        // Create floating particles
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 50; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 15 + 's';
+            particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            particlesContainer.appendChild(particle);
+        }
     </script>
-
 </body>
 
 </html>
