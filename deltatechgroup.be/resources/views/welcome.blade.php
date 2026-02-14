@@ -7,7 +7,7 @@
     <meta name="description"
         content="Delta Tech - Solutions IT innovantes pour PME. Développement web, infrastructure IT, cloud, cybersécurité et support technique 24/7 en Belgique.">
     <meta name="keywords"
-        content="solutions IT, développement web, infrastructure IT, cloud, cybersécurité, PME, Bruxelles, Belgique, Delta Tech">
+        content="solutions IT, développement web, infrastructure IT, cloud, cybersécurité, PME, Bruxelles, Belgique, Delta Tech, NAS, Finance, Applications mobiles">
     <meta name="author" content="Delta Tech">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Delta Tech - Solutions IT pour PME">
@@ -17,7 +17,6 @@
     <meta property="og:url" content="https://www.deltatechgroup.be">
     <link rel="canonical" href="https://www.deltatechgroup.be">
     <title>Delta Tech - Solutions IT Innovantes pour PME | Bruxelles, Belgique</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
             margin: 0;

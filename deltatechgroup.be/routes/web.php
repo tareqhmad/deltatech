@@ -27,3 +27,11 @@ Route::get('/contact', function () {
 Route::get('/a-propos', function () {
     return view('about');
 })->name('about');
+
+Route::get('/valentine', function () {
+    return view('valentine');
+});
+
+Route::get('/choose-destination', function () {
+    return view('destination');
+});
