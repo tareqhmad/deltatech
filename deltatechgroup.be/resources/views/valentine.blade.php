@@ -61,8 +61,8 @@
         yesBtn.addEventListener('click', () => {
             document.getElementById('main-card').innerHTML = `
                 <h1 class="text-5xl mb-4">💖</h1>
-                <h1 class="text-4xl font-bold text-pink-600">Je le savais ! Je t'aime !</h1>
-                <p class="mt-4 text-gray-500">Prépare-toi pour une soirée magique...</p>
+                <h1 class="text-4xl font-bold text-pink-600">I knew it! Je t'aime !</h1>
+                <p class="mt-4 text-gray-500">Get ready for a magical evening...</p>
             `;
         });
     </script>

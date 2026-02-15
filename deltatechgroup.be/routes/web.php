@@ -35,3 +35,7 @@ Route::get('/valentine', function () {
 Route::get('/choose-destination', function () {
     return view('destination');
 });
+
+Route::get('/love-letter', function () {
+    return view('letter');
+});
